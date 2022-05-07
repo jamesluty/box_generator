@@ -4,17 +4,18 @@ import BoxGenerator from './Components/BoxGenerator';
 import BoxOutput from './Components/BoxOutput';
 
 function App() {
-  const [colors, setColors] = useState([]);
+  const [boxes, setBoxes] = useState([]);
 
-  const newColorBox = (color) => {
-    const tempArr = [...colors, color]
-    setColors( tempArr );
+  const newBox = (box) => {
+    // const tempArr = [...colors, color]
+    setBoxes( [...boxes, box]);
+    console.log(box)
   }
 
   return (
     <div className="App">
-      <BoxGenerator newColorBox={ newColorBox }/>
-      <BoxOutput colors={ colors }/>
+      <BoxGenerator newBox={ newBox }/>
+      <BoxOutput boxes={ boxes }/>
     </div>
   );
 }
